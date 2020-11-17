@@ -104,9 +104,10 @@ GameObject:
   m_Component:
   - component: {fileID: 7218218467686144748}
   - component: {fileID: 6851732696069876006}
+  - component: {fileID: 2193626931265624595}
   m_Layer: 0
   m_Name: MachineGun
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -153,6 +154,18 @@ MonoBehaviour:
   bulletLine: {fileID: 5371638918239198338}
   leftFirePoint: {fileID: 5906243299869035549}
   rightFirePoint: {fileID: 3534048838733683207}
+--- !u!114 &2193626931265624595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5191947627307580378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6680de8d1761573439687d8992f9cfb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8770640276514349403
 GameObject:
   m_ObjectHideFlags: 0

@@ -46,7 +46,7 @@ namespace TowerDefence.Manager
         // Update is called once per frame
         void Update()
         {
-
+            
         }
     }
 

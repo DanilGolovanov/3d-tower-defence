@@ -15,6 +15,7 @@ namespace TowerDefence.Towers
         {
             TowerManager.instance.PurchaseTower(this);
         }
+
         public void AddTower(Tower _tower)
         {
             heldTower = _tower;
@@ -22,7 +23,6 @@ namespace TowerDefence.Towers
             _tower.transform.SetParent(towerHolder);
             _tower.transform.localPosition = Vector3.zero;
         }
+
     }
-
-
 }

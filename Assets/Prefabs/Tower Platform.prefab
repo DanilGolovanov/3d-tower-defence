@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 5904395133359286169}
   - component: {fileID: 6186506497774084451}
   - component: {fileID: 2530128452015172694}
+  - component: {fileID: 2689994207664730230}
   m_Layer: 0
   m_Name: Tower Platform
-  m_TagString: Untagged
+  m_TagString: TowerPlatform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -60,6 +61,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   towerHolder: {fileID: 4156078025680696069}
+--- !u!135 &2689994207664730230
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1173541268327657597}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 3.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1401581443971718510
 GameObject:
   m_ObjectHideFlags: 0
