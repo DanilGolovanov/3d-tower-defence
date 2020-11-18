@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TowerDefence.Managers;
+using TowerDefence.Enemies;
 
 public class PlayerAttack : MonoBehaviour
 {
-    private WeaponManager weapon_Manager;
+    private WeaponManager weaponManager;
 
     public float fireRate = 15f;
     private float nextTimeToFire;
@@ -17,7 +19,7 @@ public class PlayerAttack : MonoBehaviour
     void Awake()
     {
 
-        weapon_Manager = GetComponent<WeaponManager>();;
+        weaponManager = GetComponent<WeaponManager>();;
 
         crosshair = GameObject.FindWithTag(Tags.CROSSHAIR);
 
@@ -37,14 +39,14 @@ public class PlayerAttack : MonoBehaviour
         {
 
             // handle melee
-            if (weapon_Manager.GetCurrentSelectedWeapon().tag == Tags.MELEE_TAG)
+            if (weaponManager.GetCurrentSelectedWeapon().tag == Tags.MELEE_TAG)
             {
                 //weapon_Manager.GetCurrentSelectedWeapon().ShootAnimation();
             }
             // handle shoot
-            if (weapon_Manager.GetCurrentSelectedWeapon().bulletType == WeaponBulletType.BULLET)
+            if (weaponManager.GetCurrentSelectedWeapon().bulletType == WeaponBulletType.BULLET)
             {
-                weapon_Manager.GetCurrentSelectedWeapon().ShootAnimation();
+                weaponManager.GetCurrentSelectedWeapon().ShootAnimation();
                 BulletFired();
             }
         }
@@ -60,7 +62,7 @@ public class PlayerAttack : MonoBehaviour
         {
             if (hit.transform.tag == Tags.ENEMY_TAG)
             {
-                hit.transform.GetComponent<HealthScript>().ApplyDamage(damage);
+                hit.transform.GetComponent<Enemy>().Damage(damage);
             }
             else
             {

@@ -41,7 +41,7 @@ namespace TowerDefence.Enemies
         private int money = 1;
 
         private Player player; //reference to player game object within the scene
-        private EnemyManager enemy;
+        private EnemyManager enemyManager;
 
         /// <summary>
         /// Handles damage of the enemy and if below or equal to 0 calls Die()
@@ -70,7 +70,9 @@ namespace TowerDefence.Enemies
         {
             //singleton - accessing the only player in game
             player = Player.instance;
+            enemyManager = EnemyManager.instance;
             onDeath.AddListener(player.AddMoney);
+            onDeath.AddListener(enemyManager.KillEnemy);
         }
 
         // Update is called once per frame

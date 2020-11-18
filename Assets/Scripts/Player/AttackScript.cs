@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TowerDefence.Managers;
+using TowerDefence.Enemies;
 
 public class AttackScript : MonoBehaviour 
 {
@@ -16,7 +18,8 @@ public class AttackScript : MonoBehaviour
         if (hits.Length > 0) 
         {
 
-            hits[0].gameObject.GetComponent<HealthScript>().ApplyDamage(damage);
+            //hits[0].gameObject.GetComponent<HealthScript>().ApplyDamage(damage);
+            hits[0].gameObject.GetComponent<Enemy>().Damage(damage);
 
             //gameObject.SetActive(false);
 
