@@ -28,7 +28,6 @@ namespace TowerDefence.Towers
 
         protected override void RenderAttackVisuals()
         {
-            Debug.Log("I am a machine gun tower");
             MathUtils.DistanceAndDirection(out float distance, out Vector3 direction, gunHolder, TargetedEnemy.transform);
             gunHolder.rotation = Quaternion.LookRotation(direction);
             if (fireLeft)

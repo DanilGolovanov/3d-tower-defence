@@ -26,8 +26,8 @@ namespace TowerDefence.Enemies
         [Header("General Stats")]
         [SerializeField, Tooltip("how fast the enemy will move")]
         private float speed = 1;
-        [SerializeField, Tooltip("how much damage enemy can take before dying")]
-        private float health = 1;
+        [Tooltip("how much damage enemy can take before dying")]
+        public float health = 1;
         [SerializeField, Tooltip("damage to player health")]
         private float damage = 1;
         [SerializeField, Tooltip("how big is the enemy visually")]
@@ -41,6 +41,7 @@ namespace TowerDefence.Enemies
         private int money = 1;
 
         private Player player; //reference to player game object within the scene
+        private EnemyManager enemy;
 
         /// <summary>
         /// Handles damage of the enemy and if below or equal to 0 calls Die()
@@ -58,9 +59,9 @@ namespace TowerDefence.Enemies
         /// Handles the visual and technical features of dying such as giving tower xp
         /// </summary>
         /// <param name="_tower">the tower that killed the enemy</param>
-        private void Die()
+        public void Die()
         {
-            onDeath.Invoke(this);            
+            onDeath.Invoke(this);
             //Visuals
         }
 
