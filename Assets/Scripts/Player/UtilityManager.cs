@@ -17,6 +17,7 @@ public class MouseAxis
 public class AnimationTags
 {
     public const string SHOOT_TRIGGER = "Shoot";
+    public const string RELOAD_TRIGGER = "Reload";
     public const string WALK_PARAMETER = "Walk";
     public const string RUN_PARAMETER = "Run";
     public const string ATTACK_TRIGGER = "Attack";

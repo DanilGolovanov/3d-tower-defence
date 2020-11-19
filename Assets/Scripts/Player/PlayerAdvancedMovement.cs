@@ -17,10 +17,14 @@ public class PlayerAdvancedMovement : MonoBehaviour
     private float crouchingHeight = 1f;
     private bool isCrouching;
 
+    public GameObject arms;
+    Animator anim;
+
     // Start is called before the first frame update
     void Awake()
     {
         playerMovement = GetComponent<PlayerMovement>();
+        anim = arms.GetComponent<Animator>();
         lookRoot = transform.GetChild(0); //look root is child of player 
     }
 
@@ -28,6 +32,7 @@ public class PlayerAdvancedMovement : MonoBehaviour
     {
         Sprint();
         Crouch();
+        tempWalkAnimation();
     }
 
     //will circle back here a later stage to add stamina 
@@ -36,10 +41,12 @@ public class PlayerAdvancedMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftShift) && !isCrouching)
         {
             playerMovement.speed = sprintSpeed;
+            anim.SetBool("isSprinting", true);
         }
         if (Input.GetKeyUp(KeyCode.LeftShift) && !isCrouching)
         {
             playerMovement.speed = moveSpeed;
+            anim.SetBool("isSprinting", false);
         }
     }
     void Crouch()
@@ -60,6 +67,17 @@ public class PlayerAdvancedMovement : MonoBehaviour
 
                 isCrouching = true;
             }
+        }
+    }
+    void tempWalkAnimation()
+    {
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
+        {
+            anim.SetBool("isWalking", true);
+        }
+        else
+        {
+            anim.SetBool("isWalking", false);
         }
     }
 }
