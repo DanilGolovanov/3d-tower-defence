@@ -46,6 +46,11 @@ public class TowerMenu : MonoBehaviour
         towerUpgradeMenu.gameObject.SetActive(false);
     }
 
+    public void UpgradeTower()
+    {
+
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         currentTowerPlatform = other.GetComponentInParent<TowerPlatform>();
